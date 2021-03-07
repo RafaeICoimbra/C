@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <math.h>
+#include <locale.h>
+
+int main(){
+	setlocale(LC_ALL,"Portuguese");
+	int op,v3,v4;
+	float v1,v2;
+	printf("1 = Soma. \n 2 = Subtração. \n 3 = Multiplicação. \n 4 = Divisão. \n 5 = Resto da divisão. \n 6 = Raiz quadrada. \n 7 = Numero elevado ao quadrado. \n 8 = Piso. \n 9 = Teto. \n");
+	printf("Digite o código da operação: \n");
+	scanf("%d",&op);
+	switch(op){
+		case 1:
+			scanf("%f %f",&v1,&v2);
+			printf("%.2f",v1+v2);
+			break;
+		case 2:
+			scanf("%f %f",&v1,&v2);
+			printf("%.2f",v1-v2);
+			break;
+		case 3:
+			scanf("%f %f",&v1,&v2);
+			printf("%.2f",v1*v2);
+			break;
+		case 4:
+			scanf("%f %f",&v1,&v2);
+			if(v2==0){
+				printf("Divisor invalido! \n");
+			}else{
+				printf("%.2f",v1/v2);
+			}
+			break;
+		case 5:
+			scanf("%d %d",&v3,&v4);
+			printf("%d",v3%v4);
+			break;
+		case 6:
+			scanf("%f",&v1);
+			printf("%.2f",sqrt(v1));
+			break;
+		case 7:
+			scanf("%f",&v1);
+			printf("%.2f",pow(v1,2));
+			break;
+		case 8:
+			scanf("%f",&v1);
+			printf("%.2f",floor(v1));
+			break;
+		case 9:
+			scanf("%f",&v1);
+			printf("%.2f",ceil(v1));
+			break;
+			default:
+				printf("Invalido! \n");
+				break;
+	}
+	return 0;
+}
